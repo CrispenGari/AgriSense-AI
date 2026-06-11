@@ -28,8 +28,6 @@ The project is designed to support farmers, students, agricultural extension wor
   </a>
 </p>
 
----
-
 ## 📌 Repository Structure
 
 This repository contains two main sub-projects:
@@ -48,8 +46,6 @@ AgriSense AI/
 ├── LICENSE
 └── README.md
 ```
-
----
 
 ## 🧠 Prediction Pipeline
 
@@ -76,14 +72,12 @@ The first model identifies the crop type:
 
 After identifying the crop, the system automatically selects the correct crop-specific disease model.
 
-| Predicted Crop | Selected Model |
-|---|---|
-| Cashew | Cashew Disease MobileNetV3 |
-| Cassava | Cassava Disease MobileNetV3 |
-| Maize | Maize Disease MobileNetV3 |
-| Tomato | Tomato Disease MobileNetV3 |
-
----
+| Predicted Crop | Selected Model              |
+| -------------- | --------------------------- |
+| Cashew         | Cashew Disease MobileNetV3  |
+| Cassava        | Cassava Disease MobileNetV3 |
+| Maize          | Maize Disease MobileNetV3   |
+| Tomato         | Tomato Disease MobileNetV3  |
 
 ## ✨ Key Features
 
@@ -97,8 +91,6 @@ After identifying the crop, the system automatically selects the correct crop-sp
 - ⚙️ Settings for haptics, sound, notifications, explainable AI, and history
 - 🌐 FastAPI backend for model inference
 - 📱 Mobile-first design for practical field use
-
----
 
 ## 📱 Mobile App Preview
 
@@ -116,8 +108,6 @@ The app introduces AgriSense AI, explains the image upload workflow, describes t
   <img src="/screenshots/4.png" alt="Explainable AI onboarding screen" width="185"/>
 </p>
 
----
-
 ### Home and Settings
 
 The home screen provides quick access to crop health prediction, recent history, and daily crop health tips. The settings screen allows users to manage preferences such as haptics, in-app sounds, notifications, explainable AI, and saved history.
@@ -127,8 +117,6 @@ The home screen provides quick access to crop health prediction, recent history,
   <img src="/screenshots/6.png" alt="Settings preferences" width="195"/>
   <img src="/screenshots/7.png" alt="Settings support and legal options" width="195"/>
 </p>
-
----
 
 ### Leaf Image Selection and Prediction
 
@@ -140,8 +128,6 @@ Users can select a leaf image from their device or capture a live photo using th
   <img src="/screenshots/10.png" alt="Selected leaf image with explain toggle" width="195"/>
 </p>
 
----
-
 ### Crop Health Results
 
 The results screen shows the uploaded leaf image, plant prediction, disease or pest prediction, confidence scores, and a summary of the model output.
@@ -152,8 +138,6 @@ The results screen shows the uploaded leaf image, plant prediction, disease or p
   <img src="/screenshots/13.png" alt="Prediction summary" width="195"/>
 </p>
 
----
-
 ### Grad-CAM Explanations and Crop Guidance
 
 When explainable AI is enabled, the app displays Grad-CAM heatmaps, bounding-box visualizations, and the original image. It also provides crop and disease explanation content to help users interpret the prediction.
@@ -162,8 +146,6 @@ When explainable AI is enabled, the app displays Grad-CAM heatmaps, bounding-box
   <img src="/screenshots/14.png" alt="Grad-CAM explanation modal" width="195"/>
   <img src="/screenshots/15.png" alt="Crop and prediction guidance screen" width="195"/>
 </p>
-
----
 
 ### Prediction History
 
@@ -174,43 +156,37 @@ Users can save and review previous crop health predictions from the history scre
   <img src="/screenshots/17.png" alt="History screen" width="195"/>
 </p>
 
----
-
 ## 🧪 Supported Classes
 
 ### Plant Identification Classes
 
 ```ts
-["Cashew", "Cassava", "Maize", "Tomato"]
+["Cashew", "Cassava", "Maize", "Tomato"];
 ```
 
 ### Disease and Pest Classes
 
-| Crop | Classes |
-|---|---|
-| Cashew | anthracnose, gumosis, healthy, leaf miner, red rust |
-| Cassava | bacterial blight, brown spot, green mite, healthy, mosaic |
-| Maize | fall armyworm, grasshoper, healthy, leaf beetle, leaf blight, leaf spot, streak virus |
-| Tomato | healthy, leaf blight, leaf curl, septoria leaf spot, verticulium wilt |
+| Crop    | Classes                                                                               |
+| ------- | ------------------------------------------------------------------------------------- |
+| Cashew  | anthracnose, gumosis, healthy, leaf miner, red rust                                   |
+| Cassava | bacterial blight, brown spot, green mite, healthy, mosaic                             |
+| Maize   | fall armyworm, grasshoper, healthy, leaf beetle, leaf blight, leaf spot, streak virus |
+| Tomato  | healthy, leaf blight, leaf curl, septoria leaf spot, verticulium wilt                 |
 
 > The class names are kept consistent with the trained model labels to preserve class-index mapping.
 
----
-
 ## 🛠️ Technology Stack
 
-| Layer | Technology |
-|---|---|
-| Mobile App | React Native, Expo, TypeScript |
-| Backend API | FastAPI, Python |
-| Deep Learning | PyTorch, TorchVision |
-| Model Architecture | MobileNetV3 |
-| Explainability | Grad-CAM |
-| Image Processing | PIL, NumPy |
-| Testing | Pytest |
-| Storage | Local storage for uploaded and Grad-CAM images |
-
----
+| Layer              | Technology                                     |
+| ------------------ | ---------------------------------------------- |
+| Mobile App         | React Native, Expo, TypeScript                 |
+| Backend API        | FastAPI, Python                                |
+| Deep Learning      | PyTorch, TorchVision                           |
+| Model Architecture | MobileNetV3                                    |
+| Explainability     | Grad-CAM                                       |
+| Image Processing   | PIL, NumPy                                     |
+| Testing            | Pytest                                         |
+| Storage            | Local storage for uploaded and Grad-CAM images |
 
 ## 🚀 Getting Started
 
@@ -220,8 +196,6 @@ Clone the repository:
 git clone https://github.com/YOUR_USERNAME/AgriSense-AI.git
 cd AgriSense-AI
 ```
-
----
 
 ## 🖥️ Running the Server
 
@@ -255,8 +229,6 @@ To access the API from another device on the same network, use your machine's lo
 http://192.168.1.50:8000
 ```
 
----
-
 ## 📲 Running the Mobile App
 
 Navigate to the mobile directory:
@@ -285,8 +257,6 @@ Example:
 const SERVER_BASE_URL = "http://192.168.1.50:8000/api/v1/crop";
 ```
 
----
-
 ## 📡 API Usage
 
 ### Predict Crop and Disease
@@ -297,10 +267,10 @@ POST /api/v1/crop/predict
 
 ### Request Fields
 
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `image` | File | Yes | Leaf image to classify |
-| `explain` | Boolean | No | Set to `true` to generate Grad-CAM explanation images |
+| Field     | Type    | Required | Description                                           |
+| --------- | ------- | -------- | ----------------------------------------------------- |
+| `image`   | File    | Yes      | Leaf image to classify                                |
+| `explain` | Boolean | No       | Set to `true` to generate Grad-CAM explanation images |
 
 ### Prediction Without Grad-CAM
 
@@ -318,8 +288,6 @@ curl -X POST \\
   -F explain=true \\
   http://127.0.0.1:8000/api/v1/crop/predict
 ```
-
----
 
 ## ✅ Example API Response
 
@@ -353,8 +321,6 @@ curl -X POST \\
 }
 ```
 
----
-
 ## 🔍 Accessing Grad-CAM Images
 
 When `explain=true`, the server saves explanation images and returns their filenames. These images can be accessed through the storage endpoint:
@@ -369,13 +335,11 @@ Example:
 http://127.0.0.1:8000/api/v1/crop/storage/gradcam/maize_example_gradcam.png
 ```
 
-| Image Type | Description |
-|---|---|
-| `original` | The uploaded image used for prediction |
-| `gradcam` | Grad-CAM heatmap showing activated regions |
-| `bbox` | Grad-CAM-based bounding-box visualization |
-
----
+| Image Type | Description                                |
+| ---------- | ------------------------------------------ |
+| `original` | The uploaded image used for prediction     |
+| `gradcam`  | Grad-CAM heatmap showing activated regions |
+| `bbox`     | Grad-CAM-based bounding-box visualization  |
 
 ## 🧬 Dataset
 
@@ -423,8 +387,6 @@ Plant Identification/
 └── Tomato/
 ```
 
----
-
 ## 🧾 Testing
 
 Run server tests from the `server` directory:
@@ -438,8 +400,6 @@ For verbose output:
 ```shell
 pytest -s -vv
 ```
-
----
 
 ## 🧹 Git Ignore Notes
 
@@ -455,13 +415,13 @@ storage/**/*.bmp
 
 This keeps uploaded images and Grad-CAM outputs out of Git while preserving the folder structure if needed.
 
----
-
 ## ⚠️ Important Note
 
 AgriSense AI is intended for agricultural decision support. It does not replace expert agronomic advice, laboratory testing, or professional plant disease diagnosis. Predictions should be interpreted together with field inspection, local extension guidance, and crop management knowledge.
 
----
+## Notebooks
+
+The notebook for training the models can be found [here](https://github.com/CrispenGari/cv-torch/tree/main/22_CCMT_TWO_STAGE_PLANT_DISEASE).
 
 ## 📄 License
 
