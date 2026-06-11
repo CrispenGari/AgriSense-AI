@@ -1,4 +1,4 @@
-from fastapi import APIRouter, File, Body
+from fastapi import APIRouter, File, Form
 from fastapi.responses import JSONResponse
 from typing import Annotated
 from models import (
@@ -11,11 +11,15 @@ from models import (
 )
 from utils import get_image_size
 import time
+from uuid import uuid4
 
 predictCropAndDiseaseRouter = APIRouter(prefix="/api/v1/crop")
 
 @predictCropAndDiseaseRouter.post("/predict")
-def predict_crop(image: Annotated[bytes, File()], explain: Annotated[bool|None, Body()] = False):
+def predict_crop(
+    image: Annotated[bytes, File()],
+    explain: Annotated[bool, Form()] = False
+):
     start = time.monotonic()
     try:
         prediction = predict_crop_and_disease(
@@ -34,6 +38,7 @@ def predict_crop(image: Annotated[bytes, File()], explain: Annotated[bool|None, 
                 "status": "ok",
                 "prediction": prediction,
                 "size":  get_image_size(image),
+                "id": str(uuid4())
                 
             },
             status_code=200,

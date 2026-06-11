@@ -164,19 +164,21 @@ curl -X POST \
     },
     "explanation": null
   },
-  "size": "54.97 KB"
+  "size": "54.97 KB",
+  "id": "5471e4bc-b6f2-4404-be5b-1f70e54767de"
 }
 ```
 
 ### Expected Response With Explanation
 
-When `explain=true` is included, the API returns Grad-CAM explanation image filenames.
+When `explain=true` is included in the form, the API returns Grad-CAM explanation image filenames.
 
 ```json
 {
   "time": 1.3611246000000392,
   "ok": true,
   "status": "ok",
+  "id": "5471e4bc-b6f2-4404-be5b-1f70e54767de",
   "prediction": {
     "plant_prediction": {
       "label": 2,

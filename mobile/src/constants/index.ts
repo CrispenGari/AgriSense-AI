@@ -1,3 +1,6 @@
+export const SERVER_BASE_URL = `http://10.20.63.120:8080/api/v1/crop`;
+export const IMAGE_BASE_URL = `${SERVER_BASE_URL}/storage`;
+
 export const COLORS = {
   main: "#F2EDC2",
   primary: "#9FCB98",
@@ -45,11 +48,6 @@ export const STORAGE_NAME = {
   HISTORY: "agrisenseai:history",
   TIP_NOTIFICATION_FLAG_KEY: "agrisenseai:tip_flag",
   DAILY_TIP: "agrisenseai:tip",
-};
-
-export const AUDIOS = {
-  diagnosing: require("@/assets/sounds/diagnosing.wav"),
-  results: require("@/assets/sounds/results.wav"),
 };
 
 export const relativeTimeObject = {

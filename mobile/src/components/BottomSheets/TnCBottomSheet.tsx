@@ -152,18 +152,6 @@ const TnCBottomSheet = React.forwardRef<BottomSheetModal, {}>(({}, ref) => {
           improvements to the app, changes in services, legal requirements, or
           platform policies.
         </Text>
-
-        <Text
-          style={{
-            color: COLORS.secondary,
-            fontFamily: FONTS.regular,
-            marginTop: 50,
-            textAlign: "center",
-          }}
-        >
-          {Constants.default.expoConfig?.name} • Version:{" "}
-          {Constants.default.expoConfig?.version}
-        </Text>
       </BottomSheetScrollView>
     </BottomSheetModal>
   );

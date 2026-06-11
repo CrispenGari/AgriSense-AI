@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { zustandStorage } from "./storage";
-import { THistory } from "../types";
 import { STORAGE_NAME } from "../constants";
+import { THistory } from "../types";
 
 interface THistoryState {
   history: THistory[];

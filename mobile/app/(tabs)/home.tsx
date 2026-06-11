@@ -3,6 +3,7 @@ import React from "react";
 import { COLORS, IMAGES } from "@/src/constants";
 import { useSettingsStore } from "@/src/store/settingsStore";
 import DailyTip from "@/src/components/DailyTip/DailyTip";
+import Form from "@/src/components/Form/Form";
 
 const Page = () => {
   const { settings } = useSettingsStore();
@@ -29,6 +30,7 @@ const Page = () => {
         bounces
       >
         <DailyTip />
+        <Form />
       </ScrollView>
     </ImageBackground>
   );

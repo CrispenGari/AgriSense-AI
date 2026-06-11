@@ -1,23 +1,39 @@
-export type TModel = "mobilenetv3" | "resnet50" | "densenet201";
-export type TStatus = "ok" | "error";
-
 export interface TPrediction {
+  plant_prediction: TPlantprediction;
+  plant_probabilities: TPlantprediction[];
+  disease_prediction: TPlantprediction;
+  disease_probabilities: TPlantprediction[];
+  pipeline: TPipeline;
+  explanation: TExplanation;
+}
+
+export interface TExplanation {
+  gradcam: string;
+  bbox: string;
+  original: string;
+}
+
+export interface TPipeline {
+  predicted_plant: string;
+  selected_disease_model: string;
+}
+
+export interface TPlantprediction {
   label: number;
   class_label: string;
   probability: number;
 }
 
-export interface TPredictionResponse {
+export interface TInferenceResponse {
   time: number;
   ok: boolean;
-  status: TStatus;
+  status: string;
   prediction: TPrediction;
-  model: TModel;
-}
-export type THistory = {
+  size: string;
   id: string;
+}
+
+export type THistory = TInferenceResponse & {
   date: Date;
-  prediction: TPredictionResponse;
-  xray: string;
-  image: string;
+  uri: string;
 };
