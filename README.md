@@ -26,6 +26,9 @@ The project is designed to support farmers, students, agricultural extension wor
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
   </a>
+    <a href="https://github.com/crispengari/AgriSense-AI/actions/workflows/ci.yml">
+    <img src="https://github.com/crispengari/AgriSense-AI/actions/workflows/ci.yml/badge.svg" alt="CI Status">
+  </a>
 </p>
 
 ## 📌 Repository Structure
