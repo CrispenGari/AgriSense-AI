@@ -1,3 +1,6 @@
+export type TPlantIdentificationKey =
+  keyof typeof CLASS_EXPLANATIONS.Plant_Identification;
+
 export const CLASS_EXPLANATIONS = {
   Plant_Identification: {
     Cashew: {

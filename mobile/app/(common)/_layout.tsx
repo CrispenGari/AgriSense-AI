@@ -18,6 +18,7 @@ const Layout = () => {
           header: () => <ResultsHeader />,
         }}
       />
+      <Stack.Screen name="image-viewer" />
     </Stack>
   );
 };

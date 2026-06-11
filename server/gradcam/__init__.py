@@ -175,7 +175,7 @@ def save_gradcam_original_cam_bbox(
         save_dir, "original", f"{filename_prefix}_original.png"
     )
     gradcam_path = os.path.join(save_dir, "gradcam", f"{filename_prefix}_gradcam.png")
-    overlay_path = os.path.join(save_dir, "bbox", f"{filename_prefix}_overlay_bbox.png")
+    overlay_path = os.path.join(save_dir, "bbox", f"{filename_prefix}_bbox.png")
     plt.imsave(original_path, img)
     plt.imsave(gradcam_path, cam, cmap="jet")
 

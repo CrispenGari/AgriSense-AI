@@ -41,7 +41,7 @@ const Page = () => {
         flex: 1,
       }}
       source={IMAGES.background}
-      blurRadius={6}
+      blurRadius={80}
     >
       <ScrollView
         style={{ flex: 1 }}

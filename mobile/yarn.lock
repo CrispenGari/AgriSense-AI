@@ -1449,6 +1449,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@likashefqet/react-native-image-zoom@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@likashefqet/react-native-image-zoom/-/react-native-image-zoom-4.3.0.tgz#e9ef102ce3a64798ed73c7cb232466777b43aacc"
+  integrity sha512-bRH26+Kq9m7y0rsBIwa0KI6XH/kujf7hZG0wz4gPu1kGsSb6KbLdZaR1ksGvaZm08JkNd2+JIUaHSb68eh4YEg==
+
 "@napi-rs/wasm-runtime@^0.2.11":
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.12.tgz#3e78a8b96e6c33a6c517e1894efbd5385a7cb6f2"
@@ -3802,6 +3807,11 @@ expo-manifests@~1.0.11:
     "@expo/config" "~12.0.13"
     expo-json-utils "~0.15.0"
 
+expo-media-library@~18.2.1:
+  version "18.2.1"
+  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-18.2.1.tgz#22aac022cc3fabfc3e004e3f3f031c7b2cd355d8"
+  integrity sha512-dV1acx6Aseu+I5hmF61wY8UkD4vdt8d7YXHDfgNp6ZSs06qxayUxgrBsiG2eigLe54VLm3ycbFBbWi31lhfsCA==
+
 expo-modules-autolinking@3.0.26:
   version "3.0.26"
   resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-3.0.26.tgz#bfbb0d0422e32d3fe8d201c9a287cc82279ada71"
@@ -3866,6 +3876,11 @@ expo-server@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/expo-server/-/expo-server-1.0.7.tgz#fe700518f73651cb0736e79e3a4f2f8b2e2671b7"
   integrity sha512-mcmyML3oXcqFUXUxtdtCL1O00ztNI2v76d+MdniXRUgHNxIcHZ05zo+DqBaOOT6LQnPk4vA4YHqQl7iGUfRb3g==
+
+expo-sharing@~14.0.8:
+  version "14.0.8"
+  resolved "https://registry.yarnpkg.com/expo-sharing/-/expo-sharing-14.0.8.tgz#cfd5fcf77ab5f64cf3d192a40a925abb316d3545"
+  integrity sha512-A1pPr2iBrxypFDCWVAESk532HK+db7MFXbvO2sCV9ienaFXAk7lIBm6bkqgE6vzRd9O3RGdEGzYx80cYlc089Q==
 
 expo-splash-screen@~31.0.13:
   version "31.0.13"
@@ -5564,6 +5579,11 @@ mime@1.6.0:
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
 
+mime@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-4.1.0.tgz#ec55df7aa21832a36d44f0bbee5c04639b27802f"
+  integrity sha512-X5ju04+cAzsojXKes0B/S4tcYtFAJ6tTMuSPBEn9CPGlrWr8Fiw7qYeLT0XyH80HSoAoqWCaz+MWKh22P7G1cw==
+
 mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
@@ -6216,6 +6236,11 @@ react-native-reanimated@~4.1.1:
   dependencies:
     react-native-is-edge-to-edge "^1.2.1"
     semver "^7.7.2"
+
+react-native-root-siblings@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-root-siblings/-/react-native-root-siblings-5.0.1.tgz#97e050e5155228f65810fb1c466ff8e769c5272c"
+  integrity sha512-Ay3k/fBj6ReUkWX5WNS+oEAcgPLEGOK8n7K/L7D85mf3xvd8rm/b4spsv26E4HlFzluVx5HKbxEt9cl0wQ1u3g==
 
 react-native-safe-area-context@~5.6.0:
   version "5.6.2"

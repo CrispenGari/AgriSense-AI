@@ -5,6 +5,9 @@ import * as Updates from "expo-updates";
 import { Alert } from "react-native";
 import { ReactNativeFile } from "apollo-upload-client";
 import * as rnMimeTypes from "react-native-mime-types";
+import mime from "mime";
+
+export const getMimeType = (url: string) => mime.getType(url) || undefined;
 
 export const generateRNFile = ({
   uri,

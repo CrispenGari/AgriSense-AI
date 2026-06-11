@@ -4,6 +4,7 @@ import { COLORS, IMAGES } from "@/src/constants";
 import { useSettingsStore } from "@/src/store/settingsStore";
 import DailyTip from "@/src/components/DailyTip/DailyTip";
 import Form from "@/src/components/Form/Form";
+import RecentPredictions from "@/src/components/RecentPredictions/RecentPredictions";
 
 const Page = () => {
   const { settings } = useSettingsStore();
@@ -14,7 +15,7 @@ const Page = () => {
         flex: 1,
       }}
       source={IMAGES.background}
-      blurRadius={6}
+      blurRadius={80}
     >
       <ScrollView
         style={{
@@ -31,6 +32,7 @@ const Page = () => {
       >
         <DailyTip />
         <Form />
+        <RecentPredictions />
       </ScrollView>
     </ImageBackground>
   );

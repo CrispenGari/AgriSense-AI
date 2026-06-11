@@ -27,6 +27,7 @@ import Button from "@/src/components/Button/Button";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import SuggestionsBottomSheet from "@/src/components/BottomSheets/SuggestionsBottomSheet";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
+import ExplanationBottomSheet from "@/src/components/BottomSheets/ExplanationBottomSheet";
 dayjs.extend(relativeTime);
 dayjs.extend(updateLocal);
 dayjs.updateLocale("en", {
@@ -37,11 +38,11 @@ const Page = () => {
   const { result } = useLocalSearchParams<{ result: string }>();
   const data = React.useMemo<THistory>(() => JSON.parse(result), [result]);
   const suggestionsBottomSheetRef = React.useRef<BottomSheetModal>(null);
+  const explanationBottomSheetRef = React.useRef<BottomSheetModal>(null);
   const router = useRouter();
 
   const plotsData = React.useMemo(() => {
     const { disease_probabilities, plant_probabilities } = data.prediction;
-
     const plant = plant_probabilities.map((plant) => {
       const probability = plant.probability * 100;
       return {
@@ -73,7 +74,15 @@ const Page = () => {
       source={IMAGES.background}
       blurRadius={80}
     >
-      <SuggestionsBottomSheet ref={suggestionsBottomSheetRef} />
+      <SuggestionsBottomSheet data={data} ref={suggestionsBottomSheetRef} />
+      {!!data.prediction.explanation ? (
+        <ExplanationBottomSheet
+          data={data.prediction.explanation}
+          ref={explanationBottomSheetRef}
+          plant={data.prediction.plant_prediction.class_label.trim()}
+          disease={data.prediction.disease_prediction.class_label.trim()}
+        />
+      ) : null}
       <ScrollView
         contentContainerStyle={{
           backgroundColor: COLORS.transparent,
@@ -145,6 +154,16 @@ const Page = () => {
                 marginVertical: 20,
               }}
             />
+            <Text
+              style={{
+                fontFamily: FONTS.regular,
+                fontSize: 16,
+                textAlign: "center",
+                color: COLORS.red,
+              }}
+            >
+              {data.size} • {data.time.toFixed(2)}s
+            </Text>
           </Card>
         </Animated.View>
 
@@ -239,6 +258,53 @@ const Page = () => {
                 />
               ))}
             </View>
+
+            <Text
+              style={{
+                marginTop: 10,
+                fontSize: 16,
+                fontFamily: FONTS.regular,
+                textAlign: "center",
+              }}
+            >
+              To get deeper insights, make sure that you run the prediction with
+              "Explainable (XAI)" enabled get some explanation.
+            </Text>
+            {data.prediction.explanation ? (
+              <Button
+                title="Explain"
+                Icon={
+                  <MaterialIcons
+                    name={"auto-fix-high"}
+                    size={24}
+                    color={COLORS.white}
+                  />
+                }
+                style={{
+                  width: "100%",
+                  backgroundColor: COLORS.tertiary,
+                  marginVertical: 10,
+                  borderColor: COLORS.tertiary,
+                  height: 60,
+                }}
+                titleStyle={{ marginLeft: 5 }}
+                onPress={() => {
+                  explanationBottomSheetRef.current?.present();
+                }}
+              />
+            ) : (
+              <Text
+                style={{
+                  marginTop: 10,
+                  fontSize: 16,
+                  fontFamily: FONTS.regular,
+                  color: COLORS.red,
+                  textAlign: "center",
+                }}
+              >
+                No explanation for this prediction.
+              </Text>
+            )}
           </Card>
         </Animated.View>
 
@@ -352,6 +418,52 @@ const Page = () => {
                 />
               ))}
             </View>
+            <Text
+              style={{
+                marginTop: 10,
+                fontSize: 16,
+                fontFamily: FONTS.regular,
+                textAlign: "center",
+              }}
+            >
+              To get deeper insights, make sure that you run the prediction with
+              "Explainable (XAI)" enabled get some explanation.
+            </Text>
+            {data.prediction.explanation ? (
+              <Button
+                title="Explain"
+                Icon={
+                  <MaterialIcons
+                    name={"auto-fix-high"}
+                    size={24}
+                    color={COLORS.white}
+                  />
+                }
+                style={{
+                  width: "100%",
+                  backgroundColor: COLORS.tertiary,
+                  marginVertical: 10,
+                  borderColor: COLORS.tertiary,
+                  height: 60,
+                }}
+                titleStyle={{ marginLeft: 5 }}
+                onPress={() => {
+                  explanationBottomSheetRef.current?.present();
+                }}
+              />
+            ) : (
+              <Text
+                style={{
+                  marginTop: 10,
+                  fontSize: 16,
+                  fontFamily: FONTS.regular,
+                  color: COLORS.red,
+                  textAlign: "center",
+                }}
+              >
+                No explanation for this prediction.
+              </Text>
+            )}
           </Card>
         </Animated.View>
 
@@ -493,7 +605,6 @@ const Page = () => {
             }}
           />
         </Card>
-        <Text>{JSON.stringify({ data }, null, 2)}</Text>
       </ScrollView>
     </ImageBackground>
   );
