@@ -8,6 +8,14 @@
 
 AgriSense AI is a mobile-based agricultural decision-support system that uses deep learning to identify crop types and detect possible plant diseases, pest damage, or healthy conditions from leaf images. The system follows a two-stage prediction pipeline: first, it identifies the crop, and then it routes the image to the correct crop-specific disease detection model.
 
+## Methodology Followed
+
+The `AgriSense AI` followed a well known methodology called **CRISP-DM (Cross-Industry Standard Process for Data Mining)** is a widely-used, structured methodology that guides the lifecycle of data science and machine learning projects.
+
+<p align="center">
+    <img src="/flowcharts/AgriSense AI_ CRISP-DM.png" alt="Architecture">
+</p>
+
 The project is designed to support farmers, students, agricultural extension workers, researchers, and smart agriculture solutions by making crop health assessment faster, more accessible, and more explainable through a mobile interface.
 
 <p align="center">
@@ -435,3 +443,7 @@ The notebook for training the models can be found [here](https://github.com/Cris
 ## 📄 License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+### References
+
+> Mensah PK, Akoto-Adjepong V, Adu K, Ayidzoe MA, Bediako EA, Nyarko-Boateng O, Boateng S, Donkor EF, Bawah FU, Awarayi NS, Nimbe P, Nti IK, Abdulai M, Adjei RR, Opoku M, Abdulai S, Amu-Mensah F. **CCMT: Dataset for crop pest and disease detection.** Data Brief. 2023 Jun 12;49:109306. doi: _10.1016/j.dib.2023.109306_. PMID: 37360671; PMCID: PMC10285554.
