@@ -31,6 +31,12 @@ The project is designed to support farmers, students, agricultural extension wor
   </a>
 </p>
 
+## Full Architecture
+
+<p align="center">
+    <img src="/flowcharts/AgriSense AI_ Full System Architecture.png" alt="Architecture">
+</p>
+
 ## 📌 Repository Structure
 
 This repository contains two main sub-projects:
