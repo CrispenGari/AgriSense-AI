@@ -16,7 +16,8 @@
         "backgroundColor": "#FBFBFB"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.crispengari.agrisenseai"
     },
     "plugins": [
       "expo-router",
@@ -37,6 +38,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "2dcfed84-e748-40ec-9312-6cdd545e757d"
+      }
     }
   }
 }
