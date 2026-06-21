@@ -136,7 +136,7 @@ const Page = () => {
             onPress={(isOn) => {
               update({ ...settings, keepHistory: !!isOn });
             }}
-            value={settings.sound}
+            value={settings.keepHistory}
             hasSwitch
             title={"Save History"}
             labelStyle={{
